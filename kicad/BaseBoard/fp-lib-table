@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Stackable6502Shield")(type "KiCad")(uri "${KIPRJMOD}/Stackable6502Shield.pretty")(options "")(descr ""))
+)

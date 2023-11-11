@@ -872,47 +872,6 @@
         )
       )
     )
-    (symbol "Power_Supervisor:MCP100-270D" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
-      (property "Reference" "U" (at 0 8.89 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Value" "MCP100-270D" (at -1.27 -8.89 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Footprint" "" (at -10.16 3.81 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/11187f.pdf" (at -7.62 6.35 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "supervisor reset push-pull" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Microcontroller reset monitor, 2.70V threshold, active low output" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "SOT?23* TO?92*" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "MCP100-270D_1_1"
-        (rectangle (start -5.08 7.62) (end 5.08 -7.62)
-          (stroke (width 0.254) (type default))
-          (fill (type background))
-        )
-        (pin output line (at 7.62 0 180) (length 2.54)
-          (name "~{RST}" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin power_in line (at -2.54 10.16 270) (length 2.54)
-          (name "VDD" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-        (pin power_in line (at -2.54 -10.16 90) (length 2.54)
-          (name "VSS" (effects (font (size 1.27 1.27))))
-          (number "3" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
     (symbol "Regulator_Linear:L7805" (pin_names (offset 0.254)) (in_bom yes) (on_board yes)
       (property "Reference" "U" (at -3.81 3.175 0)
         (effects (font (size 1.27 1.27)))
@@ -1882,11 +1841,6 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 8849a61e-5280-41bf-b55f-14ec75f50718)
   )
-  (text "Optional power monitor for reset.\nDNF R1 and C1 when U9 is fitted."
-    (at 130.81 172.72 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 96871b58-f646-43f7-99ca-8f866d24e607)
-  )
   (text "9VDC to 12VDC" (at 25.4 62.23 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 9db2e74e-0007-4413-806a-23ab09a7b4cd)
@@ -2068,13 +2022,6 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "RESET" (shape output) (at 130.81 177.8 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid ab083bdb-84ac-4865-890b-c410ff614303)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 139.5403 177.8 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
   (global_label "NMI" (shape output) (at 166.37 87.63 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid c3288b01-aef0-4f89-83cf-98b75af9c5e5)
@@ -2202,7 +2149,7 @@
   (symbol (lib_id "power:+5V") (at 161.29 119.38 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1231ef5d-eedb-4af8-9bbf-fdb383e01fcd)
-    (property "Reference" "#PWR024" (at 161.29 123.19 0)
+    (property "Reference" "#PWR022" (at 161.29 123.19 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 161.29 114.3 0)
@@ -2218,7 +2165,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR024") (unit 1)
+          (reference "#PWR022") (unit 1)
         )
       )
     )
@@ -2249,37 +2196,10 @@
     )
   )
 
-  (symbol (lib_id "Power_Supervisor:MCP100-270D") (at 123.19 177.8 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 17d5bd84-4c5b-4b49-8bfd-f27d7fdffef9)
-    (property "Reference" "U3" (at 116.84 176.53 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-    )
-    (property "Value" "DS1813-5+" (at 116.84 179.07 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-    )
-    (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline" (at 113.03 173.99 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/11187f.pdf" (at 115.57 171.45 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 9fbf8d0f-4a8f-4db1-91a9-bf80bcd037ec))
-    (pin "2" (uuid fb8b2a90-505d-4db3-95fb-88cdadea7341))
-    (pin "3" (uuid 3108cfa6-be98-4a80-9894-7fd5b30f1fbc))
-    (instances
-      (project "MiniComputerBase"
-        (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "U3") (unit 1)
-        )
-      )
-    )
-  )
-
   (symbol (lib_id "power:+5V") (at 200.66 125.73 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 18b28633-7403-4145-b77c-291328e64e07)
-    (property "Reference" "#PWR032" (at 204.47 125.73 0)
+    (property "Reference" "#PWR030" (at 204.47 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 196.85 125.73 90)
@@ -2295,7 +2215,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR032") (unit 1)
+          (reference "#PWR030") (unit 1)
         )
       )
     )
@@ -2357,7 +2277,7 @@
   (symbol (lib_id "power:GND") (at 123.19 64.77 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2223510e-c10a-4d90-a5c1-89ddba9407fe)
-    (property "Reference" "#PWR021" (at 123.19 71.12 0)
+    (property "Reference" "#PWR019" (at 123.19 71.12 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 123.19 69.85 0)
@@ -2373,7 +2293,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR021") (unit 1)
+          (reference "#PWR019") (unit 1)
         )
       )
     )
@@ -2406,7 +2326,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 205.74 113.03 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2a167e78-8085-4229-995e-d935dd456f97)
-    (property "Reference" "TP3" (at 199.39 113.03 90)
+    (property "Reference" "TP1" (at 199.39 113.03 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "SYNC" (at 194.31 113.03 90)
@@ -2422,7 +2342,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "TP3") (unit 1)
+          (reference "TP1") (unit 1)
         )
       )
     )
@@ -2431,7 +2351,7 @@
   (symbol (lib_id "power:GND") (at 220.98 134.62 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2b789240-0abc-47ad-8492-2b4bcb4f46a0)
-    (property "Reference" "#PWR034" (at 220.98 140.97 0)
+    (property "Reference" "#PWR032" (at 220.98 140.97 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 220.98 139.7 0)
@@ -2447,7 +2367,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR034") (unit 1)
+          (reference "#PWR032") (unit 1)
         )
       )
     )
@@ -2502,35 +2422,10 @@
     )
   )
 
-  (symbol (lib_id "power:+5V") (at 120.65 167.64 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 34c78a48-c360-4488-960d-94e5a22075f8)
-    (property "Reference" "#PWR019" (at 120.65 171.45 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "+5V" (at 120.65 162.56 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 120.65 167.64 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 120.65 167.64 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 2b388138-d083-4b1b-98c9-02d4a39618fb))
-    (instances
-      (project "MiniComputerBase"
-        (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR019") (unit 1)
-        )
-      )
-    )
-  )
-
   (symbol (lib_id "MOS6502:W65C02SxP") (at 220.98 95.25 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 361a39ee-a1b2-41cf-b312-26b77cc2155c)
-    (property "Reference" "U4" (at 223.1741 55.88 0)
+    (property "Reference" "U3" (at 223.1741 55.88 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "W65C02SxP" (at 223.1741 58.42 0)
@@ -2585,7 +2480,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "U4") (unit 1)
+          (reference "U3") (unit 1)
         )
       )
     )
@@ -2821,7 +2716,7 @@
   (symbol (lib_id "power:+5V") (at 173.99 93.98 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5e4b9df2-56d6-4e01-a96d-543a57abfb95)
-    (property "Reference" "#PWR027" (at 173.99 97.79 0)
+    (property "Reference" "#PWR025" (at 173.99 97.79 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 171.45 91.44 0)
@@ -2837,7 +2732,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR027") (unit 1)
+          (reference "#PWR025") (unit 1)
         )
       )
     )
@@ -2871,7 +2766,7 @@
   (symbol (lib_id "power:GND") (at 179.07 57.15 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6cef5d34-ccfd-401f-bec0-885090d7ca1a)
-    (property "Reference" "#PWR029" (at 179.07 63.5 0)
+    (property "Reference" "#PWR027" (at 179.07 63.5 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 179.07 62.23 0)
@@ -2887,7 +2782,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR029") (unit 1)
+          (reference "#PWR027") (unit 1)
         )
       )
     )
@@ -2948,7 +2843,7 @@
   (symbol (lib_id "power:+5V") (at 220.98 55.88 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7af6168c-662e-4e54-9748-c665254c06e4)
-    (property "Reference" "#PWR033" (at 220.98 59.69 0)
+    (property "Reference" "#PWR031" (at 220.98 59.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 220.98 50.8 0)
@@ -2964,7 +2859,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR033") (unit 1)
+          (reference "#PWR031") (unit 1)
         )
       )
     )
@@ -3000,7 +2895,7 @@
   (symbol (lib_id "power:+5V") (at 182.88 93.98 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 888c258f-5720-4df8-8cce-82ecc093d434)
-    (property "Reference" "#PWR031" (at 182.88 97.79 0)
+    (property "Reference" "#PWR029" (at 182.88 97.79 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 185.42 91.44 0)
@@ -3016,7 +2911,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR031") (unit 1)
+          (reference "#PWR029") (unit 1)
         )
       )
     )
@@ -3130,7 +3025,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 205.74 118.11 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8ec941d9-7061-4dff-a130-7b9d2727a2e6)
-    (property "Reference" "TP2" (at 199.39 118.11 90)
+    (property "Reference" "TP3" (at 199.39 118.11 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "ML" (at 195.58 118.11 90)
@@ -3146,7 +3041,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "TP2") (unit 1)
+          (reference "TP3") (unit 1)
         )
       )
     )
@@ -3206,7 +3101,7 @@
   (symbol (lib_id "power:GND") (at 161.29 134.62 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9e24014e-e102-4e25-8941-ab979ddfe520)
-    (property "Reference" "#PWR025" (at 161.29 140.97 0)
+    (property "Reference" "#PWR023" (at 161.29 140.97 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 161.29 139.7 0)
@@ -3222,7 +3117,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR025") (unit 1)
+          (reference "#PWR023") (unit 1)
         )
       )
     )
@@ -3310,7 +3205,7 @@
   (symbol (lib_id "power:GND") (at 127 134.62 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b1400d29-3acb-4619-ab12-b164128a364e)
-    (property "Reference" "#PWR023" (at 127 140.97 0)
+    (property "Reference" "#PWR021" (at 127 140.97 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 127 139.7 0)
@@ -3326,32 +3221,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR023") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "power:GND") (at 120.65 187.96 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid b1f06d5a-326f-4073-8ead-bd3858649517)
-    (property "Reference" "#PWR020" (at 120.65 194.31 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GND" (at 120.65 193.04 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 120.65 187.96 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 120.65 187.96 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid aaaacbd7-809a-413f-b3c1-f59de3f0d15e))
-    (instances
-      (project "MiniComputerBase"
-        (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR020") (unit 1)
+          (reference "#PWR021") (unit 1)
         )
       )
     )
@@ -3385,7 +3255,7 @@
   (symbol (lib_id "Connector:TestPoint") (at 205.74 115.57 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b9f5741d-4565-4b02-aab0-7bc23f6253ad)
-    (property "Reference" "TP1" (at 199.39 115.57 90)
+    (property "Reference" "TP2" (at 199.39 115.57 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "VP" (at 195.58 115.57 90)
@@ -3401,7 +3271,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "TP1") (unit 1)
+          (reference "TP2") (unit 1)
         )
       )
     )
@@ -3436,7 +3306,7 @@
   (symbol (lib_id "power:+5V") (at 127 119.38 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bc5f1bfe-a701-44e7-851c-4ba1cdb2c450)
-    (property "Reference" "#PWR022" (at 127 123.19 0)
+    (property "Reference" "#PWR020" (at 127 123.19 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 127 114.3 0)
@@ -3452,7 +3322,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR022") (unit 1)
+          (reference "#PWR020") (unit 1)
         )
       )
     )
@@ -3513,7 +3383,7 @@
   (symbol (lib_id "power:+5V") (at 173.99 76.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid cf517a6d-cf0b-427e-a7ae-25e5b1b55d65)
-    (property "Reference" "#PWR026" (at 173.99 80.01 0)
+    (property "Reference" "#PWR024" (at 173.99 80.01 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 171.45 73.66 0)
@@ -3529,7 +3399,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR026") (unit 1)
+          (reference "#PWR024") (unit 1)
         )
       )
     )
@@ -3538,7 +3408,7 @@
   (symbol (lib_id "power:+5V") (at 179.07 49.53 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d0219729-2515-482b-b789-79b315814a65)
-    (property "Reference" "#PWR028" (at 179.07 53.34 0)
+    (property "Reference" "#PWR026" (at 179.07 53.34 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 179.07 44.45 0)
@@ -3554,7 +3424,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR028") (unit 1)
+          (reference "#PWR026") (unit 1)
         )
       )
     )
@@ -3742,7 +3612,7 @@
   (symbol (lib_id "power:+5V") (at 182.88 76.2 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid f792c239-125f-452f-b1de-b9aee2f9d8b7)
-    (property "Reference" "#PWR030" (at 182.88 80.01 0)
+    (property "Reference" "#PWR028" (at 182.88 80.01 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 185.42 73.66 0)
@@ -3758,7 +3628,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b"
-          (reference "#PWR030") (unit 1)
+          (reference "#PWR028") (unit 1)
         )
       )
     )

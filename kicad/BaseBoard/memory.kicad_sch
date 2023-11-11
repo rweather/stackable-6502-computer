@@ -1034,6 +1034,15 @@
     (uuid ffc9289a-3d56-46bc-ac75-b3f558e28adf)
   )
 
+  (text "32K of EEPROM" (at 180.34 134.62 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 9c7c0842-aefe-4fd6-81e6-5cb7342b8353)
+  )
+  (text "32K of Static RAM" (at 180.34 64.77 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid b7fc0610-9dc6-4009-949b-ad5c1e706141)
+  )
+
   (label "a7" (at 128.27 67.31 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 0ba2eebe-217b-4f0d-8c47-9cb1d94ec44b)
@@ -1265,7 +1274,7 @@
   (symbol (lib_id "power:GND") (at 113.03 156.21 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 069b9bf8-3444-4ecc-80c2-58563aada07f)
-    (property "Reference" "#PWR048" (at 113.03 162.56 0)
+    (property "Reference" "#PWR046" (at 113.03 162.56 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 113.03 161.29 0)
@@ -1281,7 +1290,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b/66b9f355-b8e4-43cb-823d-08b79a35e03a"
-          (reference "#PWR048") (unit 1)
+          (reference "#PWR046") (unit 1)
         )
       )
     )
@@ -1309,7 +1318,7 @@
           (reference "#PWR026") (unit 1)
         )
         (path "/3f118084-1458-40be-b12b-e8391c9e712b/66b9f355-b8e4-43cb-823d-08b79a35e03a"
-          (reference "#PWR043") (unit 1)
+          (reference "#PWR041") (unit 1)
         )
       )
     )
@@ -1318,7 +1327,7 @@
   (symbol (lib_id "Memory_EEPROM:28C256") (at 147.32 135.89 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3d06cab8-b0e4-42b6-a526-480e23fccff5)
-    (property "Reference" "U8" (at 149.5141 105.41 0)
+    (property "Reference" "U7" (at 149.5141 105.41 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "28C256" (at 149.5141 107.95 0)
@@ -1361,7 +1370,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b/66b9f355-b8e4-43cb-823d-08b79a35e03a"
-          (reference "U8") (unit 1)
+          (reference "U7") (unit 1)
         )
       )
     )
@@ -1370,7 +1379,7 @@
   (symbol (lib_id "power:+5V") (at 147.32 107.95 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4b06aa84-bcf6-4187-a516-9dd852c1b156)
-    (property "Reference" "#PWR051" (at 147.32 111.76 0)
+    (property "Reference" "#PWR049" (at 147.32 111.76 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 147.32 102.87 0)
@@ -1386,7 +1395,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b/66b9f355-b8e4-43cb-823d-08b79a35e03a"
-          (reference "#PWR051") (unit 1)
+          (reference "#PWR049") (unit 1)
         )
       )
     )
@@ -1414,7 +1423,7 @@
           (reference "#PWR026") (unit 1)
         )
         (path "/3f118084-1458-40be-b12b-e8391c9e712b/66b9f355-b8e4-43cb-823d-08b79a35e03a"
-          (reference "#PWR045") (unit 1)
+          (reference "#PWR043") (unit 1)
         )
       )
     )
@@ -1442,7 +1451,7 @@
           (reference "#PWR025") (unit 1)
         )
         (path "/3f118084-1458-40be-b12b-e8391c9e712b/66b9f355-b8e4-43cb-823d-08b79a35e03a"
-          (reference "#PWR044") (unit 1)
+          (reference "#PWR042") (unit 1)
         )
       )
     )
@@ -1451,7 +1460,7 @@
   (symbol (lib_id "Memory_RAM:CY62256-70PC") (at 147.32 67.31 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b4363e32-4ccd-4d29-9279-10da1a980a76)
-    (property "Reference" "U7" (at 149.5141 41.91 0)
+    (property "Reference" "U6" (at 149.5141 41.91 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "62256" (at 149.5141 44.45 0)
@@ -1494,7 +1503,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b/66b9f355-b8e4-43cb-823d-08b79a35e03a"
-          (reference "U7") (unit 1)
+          (reference "U6") (unit 1)
         )
       )
     )
@@ -1532,7 +1541,7 @@
   (symbol (lib_id "power:+5V") (at 113.03 151.13 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c170d91e-1650-41a5-89fc-4f5e0f02b41d)
-    (property "Reference" "#PWR047" (at 113.03 154.94 0)
+    (property "Reference" "#PWR045" (at 113.03 154.94 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 113.03 146.05 0)
@@ -1548,7 +1557,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b/66b9f355-b8e4-43cb-823d-08b79a35e03a"
-          (reference "#PWR047") (unit 1)
+          (reference "#PWR045") (unit 1)
         )
       )
     )
@@ -1557,7 +1566,7 @@
   (symbol (lib_id "power:GND") (at 147.32 163.83 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c905ead6-8e70-4dc0-8fd8-c29656d59ede)
-    (property "Reference" "#PWR052" (at 147.32 170.18 0)
+    (property "Reference" "#PWR050" (at 147.32 170.18 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 147.32 168.91 0)
@@ -1573,7 +1582,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b/66b9f355-b8e4-43cb-823d-08b79a35e03a"
-          (reference "#PWR052") (unit 1)
+          (reference "#PWR050") (unit 1)
         )
       )
     )
@@ -1630,7 +1639,7 @@
           (reference "#PWR025") (unit 1)
         )
         (path "/3f118084-1458-40be-b12b-e8391c9e712b/66b9f355-b8e4-43cb-823d-08b79a35e03a"
-          (reference "#PWR046") (unit 1)
+          (reference "#PWR044") (unit 1)
         )
       )
     )
@@ -1639,7 +1648,7 @@
   (symbol (lib_id "power:GND") (at 147.32 90.17 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f42b4e1d-f18b-4268-8d0f-6140f7eb9918)
-    (property "Reference" "#PWR050" (at 147.32 96.52 0)
+    (property "Reference" "#PWR048" (at 147.32 96.52 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 147.32 95.25 0)
@@ -1655,7 +1664,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b/66b9f355-b8e4-43cb-823d-08b79a35e03a"
-          (reference "#PWR050") (unit 1)
+          (reference "#PWR048") (unit 1)
         )
       )
     )
@@ -1664,7 +1673,7 @@
   (symbol (lib_id "power:+5V") (at 147.32 44.45 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f4f61437-76b1-4b4e-b60c-eb96bb18e92f)
-    (property "Reference" "#PWR049" (at 147.32 48.26 0)
+    (property "Reference" "#PWR047" (at 147.32 48.26 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 147.32 39.37 0)
@@ -1680,7 +1689,7 @@
     (instances
       (project "MiniComputerBase"
         (path "/3f118084-1458-40be-b12b-e8391c9e712b/66b9f355-b8e4-43cb-823d-08b79a35e03a"
-          (reference "#PWR049") (unit 1)
+          (reference "#PWR047") (unit 1)
         )
       )
     )

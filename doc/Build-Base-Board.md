@@ -7,9 +7,16 @@ you are familiar with soldering through hole parts.  There are no surface
 mount parts in the Base Board.  Sockets are recommended for the chips
 as there will be a lot of handling while soldering up all the components.
 
-Some of the components are marked on the schematic; e.g. U3 is L78L33,
-but others aren't.  I got lazier the longer I worked on the PCB layout.
+Some of the components are marked on the schematic; e.g. U1 is L78L33,
+but others aren't marked.  I got lazier the longer I worked on the PCB layout.
 Sorry.
+
+The PDF of the Base Board schematic can be found [here](../schematics/BaseBoard.pdf).
+
+The following 3D rendering from KiCad shows the location of the major
+components:
+
+<img alt="Base board layout" src="images/BaseBoard/BaseBoard.png"/>
 
 Here are all of the steps if you want to skip ahead:
 
@@ -72,9 +79,9 @@ Next it is time for the IC sockets:
 
 * U3 - 40-pin DIP socket - 65C02 microprocessor.
 * U4 - 14-pin DIP socket - 74LS00 NAND gate.
-* U5 - 24-pin DIP socket - ATF22V10C-7PX programmable logic device (optional).
+* U5 - 24-pin DIP socket - ATF22V10C-7PX Programmable Logic Device (optional).
 * U6 - 28-pin DIP socket - 62256 32K static RAM.
-* U8 - 40-pin DIP socket - 65C22 versatile interface adapter (VIA).
+* U8 - 40-pin DIP socket - 65C22 Versatile Interface Adapter (VIA).
 
 In this step I have not yet fitted the socket for U7 (28C256 EEPROM) as I
 will be fitting a 28-pin ZIF socket later.  But if you don't want to use a

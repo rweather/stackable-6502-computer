@@ -11,15 +11,15 @@ Base Board
   * 1 x W65C22NxP Versatile Interface Adapter (VIA)
   * 1 x 62256 32 kByte static RAM
   * 1 x 28C256 23 kByte EEPROM
-  * 1 x 74LS00 NAND gate (not needed if using the ATF22V10C)
-  * 1 x ATF22V10C Programmable Logic Device (optional)
+  * 1 x 74LS00 NAND gate (not needed if using the ATF22V10C-7PX)
+  * 1 x ATF22V10C-7PX Programmable Logic Device (optional)
   * 1 x LM7805 5V voltage regulator (TO-220 package)
   * 1 x L78L33 3.3V voltage regulator (TO-92 package) (optional, 3.3V supply only)
 * IC Sockets:
   * 2 x 40-pin wide DIP sockets (15.24mm width) (for 65C02 and 65C22)
   * 1 x 14-pin narrow DIP socket (7.62mm width) (for 74LS00)
   * 1 x 28-pin wide DIP socket (15.24mm width) (for 62256)
-  * 1 x 24-pin narrow DIP socket (7.62mm width) (for ATF22V10C)
+  * 1 x 24-pin narrow DIP socket (7.62mm width) (for ATF22V10C-7PX)
   * 1 x 28-pin ZIF socket (for 28C256, or use an ordinary 28-pin wide DIP socket instead)
 * Resistors:
   * 1 x 220R resistor

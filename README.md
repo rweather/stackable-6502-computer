@@ -19,8 +19,32 @@ Repository Layout
 * `kicad/Library` - Library of common schematic symbols and footprints.
 * `schematics` - PDF versions of the schematics.
 * `gerber` - Gerber files for all of the boards.
-* `pld` - Images for the ATF22V10C PLD to implement various address decoding
-  configurations.
+* `pld` - Images for the ATF22V10C-7PX PLD to implement various address
+decoding configurations.
+
+Schematics and Parts
+--------------------
+
+PDF versions of the schematics are available for the
+[Base Board](schematics/BaseBoard.pdf) and [I/O Board](schematics/IoBoard.pdf)
+in the `schematics` subdirectory.
+
+The parts list for this project can be found in the file
+[Parts.md](doc/Parts.md) in the `doc` subdirectory.  There are some
+alternatives on how you can build it, so some parts are optional:
+
+* The 1MHz crystal oscillator can use either the 14-pin DIP style package (X1)
+or the 8-pin DIP style package (X2) version.  Fit only one of the oscillators.
+* Address decoding can use either a simple 74LS00 NAND gate, or a
+ATF22V10C-7PX Programmable Logic Device (PLD).  It is easiest to start with
+the NAND gate, but the PLD provides a lot of flexibility in memory layout.
+* Optional 3.3V power supply using a L78L33 3.3V voltage regulator.
+This will be handy if you plan to interface to 3.3V equipment using
+level conversion.
+* MCP3208 12-bit SPI ADC on the I/O board for reading analog inputs.
+
+I suggest studying the schematics and the build instructions before
+deciding which options you need.
 
 Base Board
 ----------
@@ -36,7 +60,7 @@ modifications to help with expandability:
   A regular 28-pin socket can be used instead of the ZIF if you prefer.
 * 6522 Versatile Interface Adapter (VIA).
 * Address decoding logic using either a 74LS00 quad NAND gate as in Ben Eater's
-  original design, or a ATF22V10C programmable logic device (PLD).
+  original design, or a ATF22V10C-7PX programmable logic device (PLD).
 * 5V and 3.3V power supplies based on a 9-12V DC input.
 * Pin headers to expose power, bus lines, and control lines to the
   attached daughter boards.
@@ -49,6 +73,9 @@ daughter board "shields".
 If you want to lay out your own shield PCB, then you can use the
 `Stackable6502Shield` symbol and footprint from `kicad/Library`
 as a starting point.
+
+See [Build-Base-Board.md](doc/Build-Base-Board.md) in the `doc`
+subdirectory for instructions on building the base board.
 
 I/O Board
 ---------
@@ -66,11 +93,14 @@ The 125 x 82mm I/O board provides the following features:
 As can be seen, the I/O board is very featureful.  Not all features need
 to be fitted at once.  You can customise it for your requirements.
 
+See [Build-IO-Board.md](doc/Build-IO-Board.md) in the `doc`
+subdirectory for instructions on building the I/O board.
+
 Future Expansion Ideas
 ----------------------
 
 I'd like to design a memory expansion board with large amounts of
-bank-switched RAM.  The ATF22V10C PLD can help with this, redirecting
+bank-switched RAM.  The ATF22V10C-7PX PLD can help with this, redirecting
 memory requests away from the standard RAM to the additional banks.
 
 SPI-based NAND or NOR flash chip for long term storage.  The contents of
@@ -103,13 +133,13 @@ This arrangement is very wasteful of address space, particularly the
 static RAM, but is very simple.  More complex arrangements require more
 logic gates.
 
-The ATF22V10C PLD provides greater flexibility in allocating address
+The ATF22V10C-7PX PLD provides greater flexibility in allocating address
 ranges.  The PLD can be programmed to allocate the memory map in almost
 any way, and to provide additional chip select outputs for devices on
 daughter boards.  Addresses can be mapped with 64-byte granularity.
 
 The `pld` directory contains a number of configurations that can be
-programmed into the ATF22V10C.  Among these are:
+programmed into the ATF22V10C-7PX.  Among these are:
 
 * `standard` - Standard layout for the stackable configuration with all
   I/O in the range `0x7C00 - 0x7FFF`.

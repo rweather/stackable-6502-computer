@@ -93,7 +93,7 @@ The 125 x 82mm I/O board provides the following features:
 As can be seen, the I/O board is very featureful.  Not all features need
 to be fitted at once.  You can customise it for your requirements.
 
-See [Build-IO-Board.md](doc/Build-IO-Board.md) in the `doc`
+See [Build-Io-Board.md](doc/Build-Io-Board.md) in the `doc`
 subdirectory for instructions on building the I/O board.
 
 Future Expansion Ideas

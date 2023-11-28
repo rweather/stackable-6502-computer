@@ -21,6 +21,8 @@ Repository Layout
 * `gerber` - Gerber files for all of the boards.
 * `pld` - Images for the ATF22V10C-7PX PLD to implement various address
 decoding configurations.
+* `roms` - ROM images for test programs.
+* `src` - Source code for test programs.
 
 Schematics and Parts
 --------------------

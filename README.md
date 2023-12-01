@@ -39,7 +39,11 @@ in the `schematics` subdirectory.  The `gerber` directory contains the
 Gerber files if you want to get your own PCB's made.
 
 I used [PCBway](https://www.pcbway.com/) for my PCB's.  The PCB's for
-the base board and I/O board are 4-layer boards.
+the base board and I/O board are 4-layer boards.  You can order your
+own PCB's from PCBway here:
+
+* [Base Board](https://www.pcbway.com/project/shareproject/W132188ASZ13_Stackable_6502_BaseBoard_01ef6257.html)
+* [I/O Board](https://www.pcbway.com/project/shareproject/W132188ASZ14_Stackable_6502_IoBoard_ac81ba96.html)
 
 The parts list for this project can be found in the file
 [Parts.md](doc/Parts.md) in the `doc` subdirectory.  There are some

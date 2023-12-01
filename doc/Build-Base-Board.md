@@ -33,8 +33,7 @@ Here are all of the steps if you want to skip ahead:
 * [Step 11: Testing and troubleshooting](#step-11)
 
 <a name="step-1"/>
-Step 1: Resistors
------------------
+## Step 1: Resistors
 
 As with all through hole projects, start with the low profile resistors:
 
@@ -56,8 +55,7 @@ with 1K but my LED was too dim so I changed it to 220R later in the build.
 <img alt="Resistors fitted" src="images/BaseBoard/step01.jpg" width="860"/>
 
 <a name="step-2"/>
-Step 2: Diodes
---------------
+## Step 2: Diodes
 
 Fit the two Schottky diodes (D1 and D3).  Almost any Schottky should do:
 1N5819 or SB140 or equivalent.  Make sure the diodes are oriented the
@@ -74,8 +72,7 @@ supply entirely and feed 5V in via J2 from an external power supply.
 <img alt="Diodes fitted" src="images/BaseBoard/step02.jpg" width="860"/>
 
 <a name="step-3"/>
-Step 3: IC Sockets
-------------------
+## Step 3: IC Sockets
 
 Next it is time for the IC sockets:
 
@@ -109,8 +106,7 @@ is for when using the 74LS00 NAND gate for address decoding (U5 not fitted).
 <img alt="IC sockets fitted" src="images/BaseBoard/step03b.jpg" width="860"/>
 
 <a name="step-4"/>
-Step 4: Crystal Oscillator
---------------------------
+## Step 4: Crystal Oscillator
 
 Next fit the 1MHz crystal oscillator module.  The PCB has provision for
 either the 14-pin DIP sized package (X1) or the 8-pin DIP sized package (X2).
@@ -124,8 +120,7 @@ that pin 1 is on the lower left.
 <img alt="Crystal oscillator fitted" src="images/BaseBoard/step04.jpg" width="860"/>
 
 <a name="step-5"/>
-Step 5: Ceramic Capacitors
---------------------------
+## Step 5: Ceramic Capacitors
 
 Next up are the ceramic capacitors.  Most of them are 100nF.  Monolithic
 capacitors are also fine.
@@ -141,8 +136,7 @@ panel-mounted reset pushbutton, you can wire it up to J3 next to SW2.
 <img alt="Ceramic apacitors fitted" src="images/BaseBoard/step05.jpg" width="860"/>
 
 <a name="step-6"/>
-Step 6: Power Supply
---------------------
+## Step 6: Power Supply
 
 The remaining components relate to the power supply for the board:
 
@@ -171,8 +165,7 @@ You can also see that I fitted some breakaway IC socket pins for U5 because
 I didn't have a 24-pin DIP socket handy.
 
 <a name="step-7"/>
-Step 7: Smoke Test!
--------------------
+## Step 7: Smoke Test!
 
 Before fitting the ZIF socket or the chips, power the board on with a
 9V to 12V DC plugpack (wall wart) and check that the blue smoke
@@ -194,8 +187,7 @@ multimeter in continuity mode.  Make sure there aren't any shorts between
 the data and address lines in particular.
 
 <a name="step-8"/>
-Step 8: EEPROM Socket
----------------------
+## Step 8: EEPROM Socket
 
 Now we can fit the 28-pin ZIF socket for the 28C256 EEPROM:
 
@@ -207,8 +199,7 @@ actually solder this - I just put it in place to show where it would go):
 <img alt="EEPROM DIP socket fitted" src="images/BaseBoard/step08b.jpg" width="860"/>
 
 <a name="step-9"/>
-Step 9: Fit the chips
----------------------
+## Step 9: Fit the chips
 
 It is now time to fit the chips.  One thing I forgot was the "RAM Mode"
 jumper JP1 next to U5.  It must be fitted if you are using the 74LS00
@@ -233,8 +224,7 @@ remain cool when the power is applied.  If they get really hot, then turn
 everything off and check for shorts or chips that are in backwards.
 
 <a name="step-10"/>
-Step 10: Fit the pin headers
-----------------------------
+## Step 10: Fit the pin headers
 
 Next fit the 2.54pm pin headers, such as
 [these ones from Adafruit](https://www.adafruit.com/product/598).
@@ -285,8 +275,7 @@ Now that the soldering of the base board is complete, you may want to give
 the underside a good cleaning with isopropyl alcohol to remove the excess flux.
 
 <a name="step-11"/>
-Step 11: Testing and Troubleshooting
-------------------------------------
+## Step 11: Testing and Troubleshooting
 
 The `roms` subdirectory in the repository contains a file called
 `selftest.bin`.  Program this into an AT28C256 EEPROM and insert it

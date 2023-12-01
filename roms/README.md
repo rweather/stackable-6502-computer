@@ -43,3 +43,10 @@ should give a pretty good indication if the board is wired up properly.
 
 The source code for the self test is under `src/selftest` in the
 repository.
+
+Music Examples
+--------------
+
+The ROM images `happy_birthday.bin` and `merry_christmas.bin` play
+music on a piezobuzzer between PB7 and ground.  This uses the
+square wave output feature on the 65C22 VIA.

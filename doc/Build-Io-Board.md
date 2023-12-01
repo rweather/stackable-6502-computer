@@ -24,6 +24,8 @@ Here are all of the steps if you want to skip ahead:
 * [Step 6: Connectors](#step-6)
 * [Step 7: Fit the chips](#step-7)
 * [Step 8: Extra modules](#step-8)
+* [Step 9: Fit the stackable headers](#step-9)
+* [Step 10: Testing and Troubleshooting](#step-10)
 
 <a name="step-1"/>
 Step 1: Resistors and Diodes
@@ -145,7 +147,7 @@ didn't fit the 3.3V supply on the base board, you could use the
 3.3V supply from the SD card module instead.  Run a wire from
 TP1 to the 3.3V line.
 
-J2 makes Ground and PB7 available.  I usually plug in a piezobuzzer
+J2 makes Ground and PB7 available.  I usually plug in a piezobuzzer module
 for making simple sounds using the square wave output capability of
 the 65C22 Versatile Interface Adaptor (VIA) on the base board.
 
@@ -160,3 +162,99 @@ And here they are fitted to the board:
 I used a stick-on rubber foot to the SD card module to support it in place:
 
 <img alt="SD card module support" src="images/IoBoard/step08c.jpg" width="860"/>
+
+<a name="step-9"/>
+Step 9: Fit the stackable headers
+---------------------------------
+
+Next fit the 2.54pm pin stackable headers, such as
+[these ones from Adafruit](https://www.adafruit.com/product/3366).
+Cut the six required headers to size:
+
+* 2 x 6 pin headers for the voltage rails.
+* 2 x 16 pin headers for address, data, and control lines.
+* 1 x 10 pin header for the chip selects and spare pins.
+* 1 x 20 pin header for the I/O ports on the 65C22 VIA.
+
+When cutting the headers, score the cutting point with a hobby knife and
+then snap the headers off with a pair of pliers.  The pin inserts tend to fall
+out if you cut too close to the pins you want to keep.  I usually score the
+cutting point close to the next pin.  You will lose one pin insert,
+but you will have all the required pins in the snapped off portion.
+
+<img alt="Stackable headers cut" src="images/IoBoard/step09a.jpg" width="860"/>
+
+Lining up the headers for hand soldering can seem like a challenge, but it is
+quite easy if you plug the I/O board into headers on the already-soldered
+base board.  This will line everything up:
+
+<img alt="Stackable header fitting" src="images/IoBoard/step09b.jpg" width="860"/>
+
+Then quickly solder two pins on each header to tack them down.  Try not to
+apply too much heat or you might melt the two boards together permanently!
+A small glob of solder is enough even if the joint isn't perfect.
+
+<img alt="Stackable header soldering, part 1" src="images/IoBoard/step09c.jpg" width="860"/>
+
+Pull the two boards apart and solder the other pins.  You should also touch
+up the solder joints on the pins you have already done.  Otherwise you
+might have a dry joint.
+
+<img alt="Stackable header soldering, part 2" src="images/IoBoard/step09d.jpg" width="860"/>
+
+And here is the finished product, connected to the base board:
+
+<img alt="I/O board fully soldered" src="images/IoBoard/step09e.jpg" width="860"/>
+
+<a name="step-9"/>
+Step 10: Testing and Troubleshooting
+------------------------------------
+
+Connect up a USB-to-serial converter to the RS232 port, and connect to
+it with a terminal program configured for 19200 bps N-8-1.
+
+Run the same selftest program as when
+[Building the Base Board](Build-Base-Board.md#step-11) and troubleshoot
+as described on that page.
+
+If the 65C51 ACIA and the serial port are working, then you should
+see text like the following in the terminal program:
+
+    Self test started!
+    Stack check: Running
+    Stack check: Success
+    Zero page check: Running
+    Zero page check: Success
+    RAM check: Filling memory
+    RAM check: Verifying memory
+    RAM check: Success
+    BRK check: Running
+    BRK check: Success
+    Timer interrupt check: Running
+    Timer interrupt check: Success
+    PWM output check: Running
+    PWM output check: Done
+    ROM check: Running
+    ROM check: Success
+    All tests passed!
+
+This tells you that serial transmit from the board is working.
+
+Note: I sometimes have issues with my USB-to-serial converter where it
+stops working on its own.  Unplugging the USB end from my desktop
+computer and plugging it back in again can help.  So don't automatically
+assume that the I/O board is not working.  It may be other equipment!
+
+After you see "All tests passed!", you can type in characters and
+see if they are echo'ed back to you:
+
+    ...
+    ROM check: Running
+    ROM check: Success
+    All tests passed!
+    abcd
+    878jdfkjdkfj
+    It's working!
+
+If the echo works, then serial receive is also working.  Congratulations!
+You now have a working Stackable 6502 I/O Board!

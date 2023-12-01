@@ -29,6 +29,8 @@ Here are all of the steps if you want to skip ahead:
 * [Step 7: Smoke Test!](#step-7)
 * [Step 8: EEPROM Socket](#step-8)
 * [Step 9: Fit the chips](#step-9)
+* [Step 10: Fit the pin headers](#step-10)
+* [Step 11: Testing and troubleshooting](#step-11)
 
 <a name="step-1"/>
 Step 1: Resistors
@@ -158,10 +160,10 @@ the board.  Make sure you bolt the voltage regulator down before you
 solder the 3 pins.  Otherwise you might stress the package when bolting later.
 
 The pins on the L78L33 are very close together, so you will need a fine
-soldering tip.  If you mess up (like I did!), run the iron between the
-pins to melt the solder and create a gap.  Check the result carefully with a
-magnifier and multimeter to ensure you don't have a dead short from
-5V or 3.3V to ground.
+soldering tip.  If you mess up and bridge the pins (like I did!),
+run the iron between the pins to melt the solder and create a gap.
+Check the result carefully with a magnifier and multimeter to ensure
+you don't have a dead short from 5V or 3.3V to ground.
 
 <img alt="Power supply fitted" src="images/BaseBoard/step06.jpg" width="860"/>
 
@@ -229,3 +231,112 @@ You can do a second smoke test at this point to make sure there are
 no shorts due to the chips.  The 5V and 3.3V voltage regulators should
 remain cool when the power is applied.  If they get really hot, then turn
 everything off and check for shorts or chips that are in backwards.
+
+<a name="step-10"/>
+Step 10: Fit the pin headers
+----------------------------
+
+Next fit the 2.54pm pin headers, such as
+[these ones from Adafruit](https://www.adafruit.com/product/598).
+Cut the six required headers to size:
+
+* 2 x 6 pin headers for the voltage rails.
+* 2 x 16 pin headers for address, data, and control lines.
+* 1 x 10 pin header for the chip selects and spare pins.
+* 1 x 20 pin header for the I/O ports on the 65C22 VIA.
+
+When cutting the headers, score the cutting point with a hobby knife and
+then snap the headers off with a pair of pliers.  The pin inserts tend to fall
+out if you cut too close to the pins you want to keep.  I usually score the
+cutting point close to the next pin.  You will lose one pin insert,
+but you will have all the required pins in the snapped off portion.
+
+<img alt="Stackable headers cut" src="images/BaseBoard/step10a.jpg" width="860"/>
+
+Lining up the headers for hand soldering can seem like a challenge, but it is
+quite easy when you know how.  Cut the stackable headers for the I/O board,
+and then threaded them through into the base board's pin headers using a
+piece of protoboard:
+
+<img alt="Protoboard header alignment" src="images/BaseBoard/step10b.jpg" width="860"/>
+
+Veroboard will also work.  Or you could use the bare PCB for the I/O board
+without any components on it.  You can now insert the headers into the
+base board and turn the whole contraption upside down:
+
+<img alt="Protoboard and base board" src="images/BaseBoard/step10c.jpg" width="860"/>
+
+The contraption may be a little wobbly side to side because there is no
+solder holding the pins rigidly in place yet.  It can be useful to clamp
+the contraption between two books with flat spines.  I used some manuals
+for a pair of ancient computer languages:
+
+<img alt="Protoboard and base board, clamped" src="images/BaseBoard/step10d.jpg" width="860"/>
+
+Check underneath that the pin headers are vertical and then solder 2 pins
+on the ends of each header.  This will make the contraption more rigid.
+You can then remove the books and solder the rest of the pins.
+
+And here it is, all done!
+
+<img alt="Base board fully soldered" src="images/BaseBoard/step10e.jpg" width="860"/>
+
+Now that the soldering of the base board is complete, you may want to give
+the underside a good cleaning with isopropyl alcohol to remove the excess flux.
+
+<a name="step-11"/>
+Step 11: Testing and Troubleshooting
+------------------------------------
+
+The `roms` subdirectory in the repository contains a file called
+`selftest.bin`.  Program this into an AT28C256 EEPROM and insert it
+into the ROM socket (U7).  The source code is under `src/selftest`.
+
+Connect the anodes of four LED's to PB0, PB1, PB2, and PB3.  Connect the
+cathodes of the LED's through 220R or 1K resistors to ground.  If you have a
+piezobuzzer, then connect it between PB7 and ground.  My setup is
+shown in this picture (ignore the pushbutton and the 555 timer - they are a
+permanent fixture on my breadboard):
+
+<img alt="Base board with breadboard" src="images/BaseBoard/step11.jpg" width="860"/>
+
+Power on the board.  Check that the LM7805 and L78L33 voltage regulators
+aren't getting hot.  If they are, then there may be a short between
+power and ground on the board - turn the board off and look for the short.
+As mentioned above, it can be very easy to bridge the pins on the
+L78L33 so I recommend checking that first.
+
+If you have a multimeter or a bench power supply that shows the
+current draw, you can use it to measure the input current.  The current
+should be around 20mA to 50mA when running the self-test.
+
+The self-test ROM starts by blinking all LED's three times and then it
+runs the tests.  As each test runs, the test number is shown on the LED's
+in binary.  If all tests pass, the LED's will chase back and forth
+Knight Rider style in celebration.  If a test fails, the LED's will get
+stuck displaying the number of the test that failed.
+
+Here are the tests that are run.  Each test takes about 1 second when
+the CPU is clocked at 1MHz:
+
+1. Test that the stack between `$0100` and `$01FF` appears to work.
+2. Test that the zero page between `$0000` and `$00FF` appears to work.
+3. Write test values to all of RAM (except the stack and zero page).
+4. Read the test values back from RAM and verify them.
+5. Test that the BRK instruction will generate a BREAK interrupt.
+6. Test that timer interrupts can be generated from the 65C22 VIA.
+7. Beep the piezobuzzer on PB7 for 100ms with a 1kHz square wave.
+8. Test that code can be executed from all addresses in ROM.
+
+If a test fails, then the most likely cause is that a chip is fitted
+backwards or you have bent one of the pins trying to insert the chip
+into its socket.  Also make sure that you have fitted the JP1 jumper
+when using the 74LS00 NAND gate for address decoding.
+
+If no LED's light up, then there may be something wrong with the clock
+signal to the CPU.  Check it with an oscilloscope on the CLK header pin.
+Or use a multimeter - the average voltage should hover about half-way
+between 5V and ground.
+
+If everything passes, then you have a working Stackable 6502 Base Board!
+Congratulations!  Next is the [I/O Board](Build-Io-Board.md).

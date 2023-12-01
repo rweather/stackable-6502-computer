@@ -19,8 +19,6 @@ Repository Layout
 * `kicad/Library` - Library of common schematic symbols and footprints.
 * `schematics` - PDF versions of the schematics.
 * `gerber` - Gerber files for all of the boards.
-* `pld` - Images for the ATF22V10C-7PX PLD to implement various address
-decoding configurations.
 * `roms` - ROM images for test programs.
 * `src` - Source code for test programs.
 
@@ -140,22 +138,7 @@ ranges.  The PLD can be programmed to allocate the memory map in almost
 any way, and to provide additional chip select outputs for devices on
 daughter boards.  Addresses can be mapped with 64-byte granularity.
 
-The `pld` directory contains a number of configurations that can be
-programmed into the ATF22V10C-7PX.  Among these are:
-
-* `standard` - Standard layout for the stackable configuration with all
-  I/O in the range `0x7C00 - 0x7FFF`.
-* `eater` - Same Ben Eater layout as above.
-
-The standard memory layout is as follows:
-
-* `0x0000 - 0x7BFF` - 31K of static RAM
-* `0x7C00 - 0x7F7F` - For I/O devices on daughter boards
-* `0x7F80 - 0x7FBF` - ACIA - 64 bytes
-* `0x7FC0 - 0x7FFF` - VIA - 64 bytes
-* `0x8000 - 0xFFFF` - 32K of EEPROM
-
-This loses only 1K of static RAM instead of 16K.
+Note: I am still working on the PLD code.  More later.
 
 License
 -------

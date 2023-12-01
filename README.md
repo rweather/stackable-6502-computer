@@ -3,12 +3,20 @@ Stackable 6502 Computer
 =======================
 
 This repository contains schematics, PCB layouts, and other information
-for a "stackable" design for a 6502-based computer.  Stackable in the same
-way as Arduino boards that have pin headers to attach shields in the
-vertical direction.
+for a "stackable" design for a 6502-based computer based on
+[Ben Eater's Breadboard 6502 Computer](https://eater.net/6502) with
+options to expand with daughter boards (or "shields" in the Arduino sense).
 
 The CPU, memory, VIA, and address decoding are on the base board with pin
-headers to connect to other boards.
+headers to connect to other boards:
+
+<img alt="Stackable 6502 Computer Base Board" src="doc/images/Stackable6502BaseBoard.jpg" width="860"/>
+
+Here is the Stackable 6502 Computer with the I/O board fitted:
+
+<img alt="Stackable 6502 Computer with I/O Board" src="doc/images/Stackable6502WithIoBoard.jpg" width="860"/>
+
+Other boards are possible in the future; see **Future Expansion Ideas** below.
 
 Repository Layout
 -----------------
@@ -27,7 +35,11 @@ Schematics and Parts
 
 PDF versions of the schematics are available for the
 [Base Board](schematics/BaseBoard.pdf) and [I/O Board](schematics/IoBoard.pdf)
-in the `schematics` subdirectory.
+in the `schematics` subdirectory.  The `gerber` directory contains the
+Gerber files if you want to get your own PCB's made.
+
+I used [PCBway](https://www.pcbway.com/) for my PCB's.  The PCB's for
+the base board and I/O board are 4-layer boards.
 
 The parts list for this project can be found in the file
 [Parts.md](doc/Parts.md) in the `doc` subdirectory.  There are some
@@ -110,11 +122,6 @@ ROM replacement capabilities.
 An interface to an SPI-based Arduino LCD or OLED module may be interesting.
 
 An alternative serial interface using a FTDI chip for serial over USB.
-
-It would be useful to interface to peripherals via USB, particularly a
-keyboard and mouse.  It will probably have to use a modern microcontroller
-to handle the USB parts because the 6502 isn't fast enough to keep up
-with even USB 1.0 (1.5 Mbps).
 
 Address Decoding
 ----------------

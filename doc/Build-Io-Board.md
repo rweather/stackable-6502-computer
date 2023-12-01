@@ -28,6 +28,7 @@ Here are all of the steps if you want to skip ahead:
 * [Step 10: Testing and Troubleshooting](#step-10)
 
 <a name="step-1"/>
+
 ## Step 1: Resistors and Diodes
 
 As with all through hole projects, start with the low profile components:
@@ -50,6 +51,7 @@ that the I/O board is getting power from the base board.
 <img alt="Resistors and diodes fitted" src="images/IoBoard/step01.jpg" width="860"/>
 
 <a name="step-2"/>
+
 ## Step 2: IC Sockets
 
 Next it is time for the IC sockets:
@@ -67,6 +69,7 @@ diagnosing faults.
 <img alt="IC sockets fitted" src="images/IoBoard/step02.jpg" width="860"/>
 
 <a name="step-3"/>
+
 ## Step 3: Capacitors
 
 Next up are the capacitors.
@@ -79,6 +82,7 @@ those instead.
 <img alt="Capacitors fitted" src="images/IoBoard/step03.jpg" width="860"/>
 
 <a name="step-4"/>
+
 ## Step 4: Crystal
 
 Next fit the 1.8432MHz crystal Y1, lying down flat on the PCB to reduce
@@ -87,6 +91,7 @@ vertical height:
 <img alt="Crystal fitted" src="images/IoBoard/step04.jpg" width="860"/>
 
 <a name="step-5"/>
+
 ## Step 5: Indicator LED's
 
 Now fit the four indicator LED's on PB0 to PB3.  Make sure you orient
@@ -95,6 +100,7 @@ them with the cathode (flat side) toward the edge of the PCB.
 <img alt="LED's fitted" src="images/IoBoard/step05.jpg" width="860"/>
 
 <a name="step-6"/>
+
 ## Step 6: Connectors
 
 Fit half-height 2.54mm pin headers to J1, J2, and J3, such as
@@ -104,6 +110,7 @@ Then fit the female DB9 connector to J4.
 <img alt="Connectors fitted" src="images/IoBoard/step06.jpg" width="860"/>
 
 <a name="step-7"/>
+
 ## Step 7: Fit the chips
 
 It is now time to fit the chips.  Check that the chips are oriented correctly
@@ -114,6 +121,7 @@ that the right pins are connected to each other.
 <img alt="Connectors fitted" src="images/IoBoard/step07.jpg" width="860"/>
 
 <a name="step-8"/>
+
 ## Step 8: Extra modules
 
 J1 was designed to take a [5V Arduino SD card module](https://www.jaycar.com.au/arduino-compatible-sd-card-interface-module/p/XC4386)
@@ -156,6 +164,7 @@ I used a stick-on rubber foot to the SD card module to support it in place:
 <img alt="SD card module support" src="images/IoBoard/step08c.jpg" width="860"/>
 
 <a name="step-9"/>
+
 ## Step 9: Fit the stackable headers
 
 Next fit the 2.54pm pin stackable headers, such as
@@ -198,6 +207,7 @@ And here is the finished product, connected to the base board:
 <img alt="I/O board fully soldered" src="images/IoBoard/step09e.jpg" width="860"/>
 
 <a name="step-9"/>
+
 ## Step 10: Testing and Troubleshooting
 
 Connect up a USB-to-serial converter to the RS232 port, and connect to

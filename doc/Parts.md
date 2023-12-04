@@ -12,16 +12,11 @@ You will need at least the basic "6502 Computer Kit", the
 "6502 Serial Interface Kit", and of course an "EEPROM Programmer".
 I have marked the parts that you can get from Ben's kits with (BE) below.
 
-If you are a supplier of hobbyist kits or know a reputable supplier and
-want to make up a kit based on my design, then contact me via
-[email](mailto:rhys.weatherley@gmail.com).  The basic design is licensed
-under the [Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1) license,
-but I will be happy to relax that for a cut of the kit purchase price.
-
 Base Board
 ----------
 
-* PCB; see the `gerber/BaseBoard` directory for the 4-layer Gerbers.
+* PCB; see the `gerber/BaseBoard` directory for the 4-layer Gerbers,
+or [purchase it from PCBway](https://www.pcbway.com/project/shareproject/W132188ASZ13_Stackable_6502_BaseBoard_01ef6257.html).
 * Integrated Circuits:
   * 1 x W65C02SxP microprocessor, 40-pin DIP (BE)
   * 1 x W65C22NxP Versatile Interface Adapter, 40-pin DIP (VIA) (BE)
@@ -65,7 +60,8 @@ Base Board
 I/O Board
 ---------
 
-* PCB; see the `gerber/IoBoard` directory for the 4-layer Gerbers.
+* PCB; see the `gerber/IoBoard` directory for the 4-layer Gerbers, or
+[purchase it from PCBway](https://www.pcbway.com/project/shareproject/W132188ASZ14_Stackable_6502_IoBoard_ac81ba96.html).
 * Integrated Circuits:
   * W65C51NxP Asynchronous Communications Interface Adapter (ACIA), 28-pin DIP (BE)
   * MAX232 RS-232 line driver, 16-pin DIP (BE)

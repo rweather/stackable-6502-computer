@@ -75,7 +75,7 @@ I/O Board
 * Capacitors:
   * 2 x 100nF ceramic or monolithic capacitor (BE)
   * 1 x 22pF ceramic capacitor (20pF or 30pF will also work) (BE)
-  * 1 x 1uF ceramic or non-polarized capacitor (BE)
+  * 4 x 1uF ceramic or non-polarized capacitor (BE)
 * Diodes and LED's:
   * 1 x Schottky diode, 1N5189, SB140, or equivalent
   * 5 x 3mm red or green LED's for power indication and digital outputs (5mm will also work - BE)
